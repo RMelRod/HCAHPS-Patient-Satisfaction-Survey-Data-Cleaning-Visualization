@@ -183,7 +183,7 @@ SELECT
 FROM raw_hospital_data.raw_hospital_beds
 );
 ```
-### **9. Reformatting, Standardization, & Joining Table I & Table II**
+### **9. Reformatting, Standardization, & Joining Tables I & II**
 I joined the CTE hospital_beds with the reformatted raw_hcahps_data table and renamed the raw_hcahps_data table to hcahps.
 ```
 WITH hospital_beds_prep AS
@@ -207,7 +207,7 @@ LEFT JOIN hospital_beds_prep as beds
 ON LPAD(CAST(facility_id AS text),6,'0') = beds.provider_ccn
 AND beds.nth_row = 1
 ```
-### **9.1 Reformatting, Renaming, Joining & Preparing to Export as a CSV**
+### **9.1 Reformatting, Renaming, Joining & Preparing to Exporting**
 I reformatted the remaining columns that needed to be in date format including start_date_converted, and end_date_converted. I then renamed the fiscal_year_begin_date and fiscal_year_end_date to beds_start_report_period, beds_end_report_period, so these columns would be easier to understand when exported. Finally, I filtered out rows where number_of_beds was NULL.
 ```
 WITH hospital_beds_prep AS
