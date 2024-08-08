@@ -168,23 +168,8 @@ SELECT
 	*
 FROM raw_hospital_data.raw_hcahps_data;
 ```
-### **8.4 Preparing to JOIN Tables**
-I used the following CTE (hospital_beds) to prepare the raw_hospital_beds table to JOIN with the raw_hcahps_data table.
-```
-WITH hospital_beds_prep AS
-(
-SELECT
-	LPAD(CAST(provider_ccn as text),6,'0') AS provider_ccn,
-	hospital_name,
-	TO_DATE(fiscal_year_begin_date,'MM/DD/YYYY') AS fiscal_year_begin_date,
-	TO_DATE(fiscal_year_end_date,'MM/DD/YYYY') AS fiscal_year_end_date,
-	number_of_beds,
-	ROW_NUMBER () OVER (PARTITION BY provider_ccn ORDER BY TO_DATE(fiscal_year_end_date,'MM/DD/YYYY') DESC) AS nth_row
-FROM raw_hospital_data.raw_hospital_beds
-);
-```
-### **9. Reformatting, Standardization, & Joining Tables I & II**
-I joined the CTE hospital_beds with the reformatted raw_hcahps_data table and renamed the raw_hcahps_data table to hcahps.
+### **8.4 Reformatting, Standardization, & Joining Tables I & II**
+I joined the following CTE (hospital_beds) with the reformatted raw_hcahps_data table and renamed the raw_hcahps_data table to hcahps.
 ```
 WITH hospital_beds_prep AS
 (
@@ -207,7 +192,7 @@ LEFT JOIN hospital_beds_prep as beds
 ON LPAD(CAST(facility_id AS text),6,'0') = beds.provider_ccn
 AND beds.nth_row = 1
 ```
-### **9.1 Reformatting, Renaming, Joining & Preparing to Exporting**
+### **8.5 Reformatting, Renaming, Joining & Preparing to Exporting**
 I reformatted the remaining columns that needed to be in date format including start_date_converted, and end_date_converted. I then renamed the fiscal_year_begin_date and fiscal_year_end_date to beds_start_report_period, beds_end_report_period, so these columns would be easier to understand when exported. Finally, I filtered out rows where number_of_beds was NULL.
 ```
 WITH hospital_beds_prep AS
@@ -236,7 +221,7 @@ ON LPAD(CAST(facility_id AS text),6,'0')= beds.provider_ccn
 AND beds.nth_row = 1
 WHERE number_of_beds IS NOT NULL
 ```
-### **9.2 Assembling the Final Table and Exporting as a CSV**
+### **8.6 Assembling the Final Table and Exporting as a CSV**
 Using the query below, I created a table called final_tableau_file. I then exported it to a CSV to be used in the tableau visualization.
 ```
 CREATE TABLE "postgres".raw_hospital_data.final_tableau_file AS
@@ -266,7 +251,7 @@ ON LPAD(CAST(facility_id AS text),6,'0') = beds.provider_ccn
 AND beds.nth_row = 1
 WHERE number_of_beds IS NOT NULL
 ```
-## **10. Visualization in Tableau**
+## **9. Visualization in Tableau**
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
 # **Acknowledgment**
 This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry). Special thanks to [Data Wizardry](https://www.youtube.com/@DataWizardry) for their valuable tutorials and resources.
