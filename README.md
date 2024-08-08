@@ -183,7 +183,7 @@ SELECT
 FROM raw_hospital_data.raw_hospital_beds
 );
 ```
-### **9. Reformatting, Standardization, & Joining Tables**
+### **9. Reformatting, Standardization, & Joining Table I & Table II**
 I joined the CTE hospital_beds with the reformatted raw_hcahps_data table and renamed the raw_hcahps_data table to hcahps.
 ```
 WITH hospital_beds_prep AS
@@ -236,7 +236,7 @@ ON LPAD(CAST(facility_id AS text),6,'0')= beds.provider_ccn
 AND beds.nth_row = 1
 WHERE number_of_beds IS NOT NULL
 ```
-### **9.2 Assembling the Final Table to Export as a CSV**
+### **9.2 Assembling the Final Table and Exporting as a CSV**
 Using the query below, I created a table called final_tableau_file. I then exported it to a CSV to be used in the tableau visualization.
 ```
 CREATE TABLE "postgres".raw_hospital_data.final_tableau_file AS
