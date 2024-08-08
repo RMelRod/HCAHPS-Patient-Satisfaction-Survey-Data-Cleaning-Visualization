@@ -266,7 +266,7 @@ ON LPAD(CAST(facility_id AS text),6,'0') = beds.provider_ccn
 AND beds.nth_row = 1
 WHERE number_of_beds IS NOT NULL
 ```
-### **10. Visualization in Tableau**
+## **10. Visualization in Tableau**
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
 # **Acknowledgment**
 This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry). Special thanks to [Data Wizardry](https://www.youtube.com/@DataWizardry) for their valuable tutorials and resources.
