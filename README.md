@@ -259,7 +259,7 @@ To ensure each facility name and provider CCN were correctly identified, I conca
 [Facility Name] + ' - ' + STR([Provider Ccn])
 ```
 ### 10.2 Determining Hospital Size
-Each hospital was to be grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds. 
+Each hospital was to be grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds calculated below. 
 ```
 IF [Number Of Beds] >= 500 THEN 'Large'
 ELSEIF [Number Of Beds] >= 100
@@ -267,14 +267,15 @@ AND [Number Of Beds] < 500 THEN 'Medium'
 ELSEIF [Number Of Beds] < 100 THEN 'Small'
 END
 ```
-
-A top box question contains the number "9" or "always". Therefore, the following if-then statement was used to identify the number of top box questions that also corresponded with the number of top box answers selected by patients across all the HCAHPS questions.
+### 10.3 Identifying Top Box Answers
+A top box question contains the number "9" or "always". Therefore, the following if-then statement was used to identify the number of top box questions. These questions also corresponded with the number of top box answers selected by patients across all of the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
 END
 ```
-I then determined the mean score percentage for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state. This was the mean cohort.
+### 10.4 Determining Top Box Mean Percentage & Delta From Mean Cohort
+I then determined the mean percentage score for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state.(The mean cohort).
 To compare each hospital's top box mean scores for each HCAHPS question with other hospitals of the same size and in the same state, I then determined the delta from the mean cohort. 
 
 
