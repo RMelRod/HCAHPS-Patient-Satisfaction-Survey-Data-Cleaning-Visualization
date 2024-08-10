@@ -1,6 +1,6 @@
 # HCAHPS Patient Satisfaction Survey Data Cleaning & Visualization
 ## **1. Project Overview**
-**Objective:**  To clean, categorize and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores by focusing on top box answers, (Top box answers are survey scores of "Always" or "9-10") for each HCAHPS question to determine the quality of patient care in 3,000+ hospitals nationwide.
+**Objective:**  To clean, categorize and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores. By focusing on top box answers, (Top box answers are survey scores of "Always" or "9-10") for each HCAHPS question to determine the quality of patient care in 3,000+ hospitals nationwide.
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, data standardization, and ensuring data integrity for visualization in Tableau.
 
@@ -276,8 +276,11 @@ END
 ```
 ### 10.4 Determining Top Box Mean Percentage & Delta From Mean Cohort
 I then determined the mean percentage score for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state (the mean cohort).
-To compare each hospital's top box mean scores for each HCAHPS question with other hospitals of the same size and in the same state, I then determined the delta from the mean cohort. 
-
+To compare each hospital's top box mean scores for each HCAHPS question with other hospitals of the same size and in the same state, I then determined the "Delta From the Mean Cohort". 
+```
+[Actual HCAHPS Percent] -
+{FIXED[State],[Hospital Size],[Hcahps Answer Description]:AVG([Actual HCAHPS Percent])}
+```
 
 
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
