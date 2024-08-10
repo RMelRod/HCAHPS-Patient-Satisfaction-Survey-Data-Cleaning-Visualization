@@ -265,14 +265,13 @@ To ensure each facility name and provider CCN were correctly identified, I conca
 ```
 [Facility Name] + ' - ' + STR([Provider Ccn])
 ```
-A top box question contains the number "9" or "always". Therefore, the following if-then statement was used to identify the number of top box questions corresponding with the number of top box answers selected by patients across all the HCAHPS questions.
+A top box question contains the number "9" or "always". Therefore, the following if-then statement was used to identify the number of top box questions that also corresponded with the number of top box answers selected by patients across all the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
 END
 ```
-A cohort was determined by a combination of hospital size and the state in which each hospital was located.
-An average (mean) score was determined for each small, medium, and large hospital based on the 
+
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
 # **Acknowledgment**
 This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry). Special thanks to [Data Wizardry](https://www.youtube.com/@DataWizardry) for their valuable tutorials and resources.
