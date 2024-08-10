@@ -261,11 +261,11 @@ AND [Number Of Beds] < 500 THEN 'Medium'
 ELSEIF [Number Of Beds] < 100 THEN 'Small'
 END
 ```
-To ensure each facility name and provider CCN were correctly identified, I concatenated the facilty name with it's cooresponding provider CCN.
+To ensure each facility name and provider CCN were correctly identified, I concatenated the facility name with its corresponding provider CCN.
 ```
 [Facility Name] + ' - ' + STR([Provider Ccn])
 ```
-As top box answers contain the number "9" or "always", the following calculation was used to identify the number of top box answers, across all of the HCAHPS questions.
+As top box answers contain the number "9" or "always", the following calculation was used to identify the number of top box answers, across all the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
