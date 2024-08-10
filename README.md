@@ -253,6 +253,24 @@ AND num_completed_surveys IS NOT NULL
 AND survey_response_rate_percent IS NOT NULL
 ```
 ## **10. Visualization in Tableau**
+Each hospital size was determined based on the number of beds using a calculated field with the following code in Tableau.
+```
+IF [Number Of Beds] >= 500 THEN 'Large'
+ELSEIF [Number Of Beds] >= 100
+AND [Number Of Beds] < 500 THEN 'Medium'
+ELSEIF [Number Of Beds] < 100 THEN 'Small'
+END
+```
+To ensure each facility name and provider CCN were correctly identified, I concatenated the facilty name with it's cooresponding provider CCN.
+```
+[Facility Name] + ' - ' + STR([Provider Ccn])
+```
+As top box answers contain the number "9" or "always", the following calculation was used to identify the number of top box answers, across all of the HCAHPS questions.
+```
+IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
+THEN 1 ELSE 0
+END
+```
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
 # **Acknowledgment**
 This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry). Special thanks to [Data Wizardry](https://www.youtube.com/@DataWizardry) for their valuable tutorials and resources.
