@@ -265,7 +265,7 @@ To ensure each facility name and provider CCN were correctly identified, I conca
 ```
 [Facility Name] + ' - ' + STR([Provider Ccn])
 ```
-As top box questions contain the number "9" or "always", the following if-then statement was used to identify the number of top box questions selected by patients across all the HCAHPS questions.
+A top box questions contain the number "9" or "always". Therefore, the following if-then statement was used to identify the number of top box answers corresponding to the number of top box questions selected by patients across all the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
