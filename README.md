@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS "postgres"."raw_hospital_data".raw_HCAHPS_data
 ```
 ## **5. Initial Data Exploration: Table I: raw_hospital_beds**
 
-I examined the raw_hospital_beds table. It seemed rather standardized and strightforward for the most part. I only needed the CMS Certification number (CCN), hospital name and bed count corresponding with the most recent dates. There were some NULL bed counts. However, these will be filtered out before the csv is exported into Tableau as these hospitals cannot be classified as small medium or large. Reformatting and manipulation of the date column will also be necessary. A provider CCN number must be in a six digit format, so this must be corrected as well. 
+I examined the raw_hospital_beds table. It seemed rather standardized and strightforward for the most part. I only needed the CMS Certification number (CCN), hospital name and bed count corresponding with the most recent dates. There were some NULL bed counts. However, these will be filtered out in Tableau as these hospitals cannot be classified as small medium or large. Reformatting and manipulation of the date column will also be necessary. A provider CCN number must be in a six digit format, so this must be corrected as well. 
 
 ## **6. Data Cleaning of Table 1: raw_hospital_beds**
 
@@ -124,7 +124,7 @@ WHERE nth_row = 1
 GROUP BY provider_ccn, hospital_name, fiscal_year_begin_date, fiscal_year_end_date, number_of_beds, nth_row;
 ```
 ## **7. Initial Data Exploration Table II: raw_hcahps_data**
-I examined the raw_hcahps_data table. As this table was similar to the raw_hospital_beds table, it was apparent I would need to reformat the facility_id. I would also need to standardize this column and rename it provider_ccn. Reformatting of the date column would also be necessary. There were some NULL values. However, these will be filtered out later in Tableau.
+I examined the raw_hcahps_data table. As this table was similar to the raw_hospital_beds table, it was apparent I would need to reformat the facility_id. I would also need to standardize this column and rename it provider_ccn. Reformatting of the date column would also be necessary. There were some NULL values. However, these will be filtered out in the final query.
 
 ## **8. Data Cleaning Table II: raw_hcahps_data**
 ### **8.1 Checking for Duplicates**
