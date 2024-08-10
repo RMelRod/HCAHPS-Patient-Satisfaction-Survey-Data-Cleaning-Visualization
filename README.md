@@ -275,7 +275,7 @@ THEN 1 ELSE 0
 END
 ```
 ### 10.4 Determining Top Box Mean Percentage & Delta From Mean Cohort
-I then determined the mean percentage score for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state.(The mean cohort).
+I then determined the mean percentage score for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state (the mean cohort).
 To compare each hospital's top box mean scores for each HCAHPS question with other hospitals of the same size and in the same state, I then determined the delta from the mean cohort. 
 
 
