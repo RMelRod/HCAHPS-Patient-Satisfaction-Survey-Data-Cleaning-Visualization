@@ -224,8 +224,7 @@ WHERE number_of_beds IS NOT NULL
 ### **9.2 Assembling the Final Table and Exporting as a CSV**
 Using the query below, I created a table called final_tableau_file. I then exported it to a CSV to be used in the tableau visualization.
 ```
-CREATE TABLE "postgres".raw_hospital_data.final_tableau_file AS
-	
+CREATE TABLE "postgres".raw_hospital_data.final_tableau_file2 AS
 WITH hospital_beds_prep AS
 (
 SELECT
@@ -249,7 +248,9 @@ FROM raw_hospital_data.raw_hcahps_data as hcahps
 LEFT JOIN hospital_beds_prep AS beds
 ON LPAD(CAST(facility_id AS text),6,'0') = beds.provider_ccn
 AND beds.nth_row = 1
-WHERE number_of_beds IS NOT NULL
+WHERE hcahps_answer_percent IS NOT NULL
+AND num_completed_surveys IS NOT NULL
+AND survey_response_rate_percent IS NOT NULL
 ```
 ## **10. Visualization in Tableau**
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
