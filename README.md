@@ -253,13 +253,13 @@ AND num_completed_surveys IS NOT NULL
 AND survey_response_rate_percent IS NOT NULL
 ```
 ## **10. Visualization in Tableau**
-### 10.1 Ensuring Correspondence Between Hospital Name and Provider CCN
+### 10.1 Ensuring Correspondence Between Hospital Name & Provider CCN
 To ensure each facility name and provider CCN were correctly identified, I concatenated the facility name with its corresponding provider CCN.
 ```
 [Facility Name] + ' - ' + STR([Provider Ccn])
 ```
 ### 10.2 Determining Hospital Size
-Each hospital size was determined based on the number of beds using a calculated field with the following code in Tableau.
+Each hospital was to be grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds. 
 ```
 IF [Number Of Beds] >= 500 THEN 'Large'
 ELSEIF [Number Of Beds] >= 100
