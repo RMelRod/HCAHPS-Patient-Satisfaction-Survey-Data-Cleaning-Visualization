@@ -271,7 +271,7 @@ IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
 END
 ```
-I then determined the mean score for each hospital on each HCAHPS question to compare with other hospitals of the same size and state in which they were located. This was the mean cohort.
+I then determined the mean score for each top box HCAHPS question to compare with other hospitals of the same size and state in which they were located. This was the mean cohort.
 
 
 
