@@ -1,6 +1,6 @@
 # HCAHPS Patient Satisfaction Survey Data Cleaning & Visualization
 ## **1. Project Overview**
-**Objective:**  To categorize, clean and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores focusing on top box answers, (Top box answers are survey scores of "Always" or "9-10") for each HCAHPS question to determine the quality of patient care in 3,000+ hospitals nationwide.
+**Objective:**  To clean, categorize and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores by focusing on top box answers, (Top box answers are survey scores of "Always" or "9-10") for each HCAHPS question to determine the quality of patient care in 3,000+ hospitals nationwide.
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, data standardization, and ensuring data integrity for visualization in Tableau.
 
@@ -253,6 +253,12 @@ AND num_completed_surveys IS NOT NULL
 AND survey_response_rate_percent IS NOT NULL
 ```
 ## **10. Visualization in Tableau**
+### 10.1 Ensuring Correspondence Between Hospital Name and Provider CCN
+To ensure each facility name and provider CCN were correctly identified, I concatenated the facility name with its corresponding provider CCN.
+```
+[Facility Name] + ' - ' + STR([Provider Ccn])
+```
+### 10.2 Determining Hospital Size
 Each hospital size was determined based on the number of beds using a calculated field with the following code in Tableau.
 ```
 IF [Number Of Beds] >= 500 THEN 'Large'
@@ -261,17 +267,15 @@ AND [Number Of Beds] < 500 THEN 'Medium'
 ELSEIF [Number Of Beds] < 100 THEN 'Small'
 END
 ```
-To ensure each facility name and provider CCN were correctly identified, I concatenated the facility name with its corresponding provider CCN.
-```
-[Facility Name] + ' - ' + STR([Provider Ccn])
-```
+
 A top box question contains the number "9" or "always". Therefore, the following if-then statement was used to identify the number of top box questions that also corresponded with the number of top box answers selected by patients across all the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
 END
 ```
-I then determined the mean score for each top box HCAHPS question to compare with other hospitals of the same size and state in which they were located. This was the mean cohort.
+I then determined the mean score percentage for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state. This was the mean cohort.
+To compare each hospital's top box mean scores for each HCAHPS question with other hospitals of the same size and in the same state, I then determined the delta from the mean cohort. 
 
 
 
