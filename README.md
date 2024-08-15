@@ -1,6 +1,6 @@
 # HCAHPS Patient Satisfaction Survey Data Cleaning & Visualization
 ## **1. Project Overview**
-**Objective:**  To clean, categorize and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores. By focusing on top box answers, (survey scores = "Always"/"9-10") for each HCAHPS question to identify the quality of patient care in 3,000+ hospitals nationwide.
+**Objective:**  To clean, categorize and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores. By focusing on top box answers, (survey scores = "Always"/"9-10") for each HCAHPS question, to identify the quality of patient care in 3,000+ hospitals nationwide.
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, de-duplication of records, data standardization, and ensuring data integrity for visualization in Tableau.
 
@@ -258,7 +258,7 @@ ELSEIF [Number Of Beds] < 100 THEN 'Small'
 END
 ```
 ### 10.3 Determining Percentage of Patients with Top Box Answers Per Cohort
-A top box question contains the key characters of "9-10" or "Always". Therefore, the following if-then statement was used to identify the number of top box questions. These questions also corresponded with the number of top box answers selected by patients across all of the HCAHPS questions.
+A top box question contains the key characters of "9-10" or "Always". Therefore, the following if-then statement was used to identify the number of top box questions. These questions corresponded with the number of top box answers selected by patients across all of the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
@@ -272,7 +272,7 @@ To compare each hospital's top box mean scores for each HCAHPS question with oth
 {FIXED[State],[Hospital Size],[Hcahps Answer Description]:AVG([Actual HCAHPS Percent])}
 ```
 ### 10.5 Visualizing Overall Hospital Scores Compared to the Mean Cohort
-To visualize each hospital's scores per HCAHPS question with respect to the mean cohort, I created the "Cohort Hospital Delta Spread". One can see how the quality of patient care for each hospital compares to the cohert with respect to specific HCAHPS questions.
+To visualize each hospital's scores per HCAHPS question with respect to the mean cohort, I created the "Cohort Hospital Delta Spread". This compared the quality of patient care for each selected hospital with respect to specific HCAHPS questions compared to the mean cohort.
 
 
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
