@@ -242,7 +242,7 @@ WHERE hcahps_answer_percent IS NOT NULL
 AND num_completed_surveys IS NOT NULL
 AND survey_response_rate_percent IS NOT NULL
 ```
-## **10. Visualization Dashboard in Tableau**
+## **10. Visualization of Data in Tableau Dashboard**
 ### 10.1 Ensuring Correspondence Between Hospital Name & Provider CCN
 To ensure each facility name and provider CCN were correctly identified, I concatenated the facility name with its corresponding provider CCN.
 ```
