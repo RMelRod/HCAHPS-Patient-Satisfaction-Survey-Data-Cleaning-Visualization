@@ -221,7 +221,7 @@ ON LPAD(CAST(facility_id AS text),6,'0')= beds.provider_ccn
 AND beds.nth_row = 1
 WHERE number_of_beds IS NOT NULL
 ```
-### **9.2 Assembling the Final Table and Exporting as a CSV**
+### **9.2 Assembling the Final Table & Exporting**
 Using the query below, I created a table called final_tableau_file. I then exported it to a CSV to be used in the tableau visualization.
 ```
 CREATE TABLE "postgres".raw_hospital_data.final_tableau_file2 AS
