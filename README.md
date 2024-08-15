@@ -157,7 +157,7 @@ HAVING
     COUNT(*) > 1;
 -- 0 rows
 ```
-### **8.3 Reformatting & Standardization**
+### **8.2 Reformatting & Standardization**
 All facility_id were formatted in a "character varying" format. As in the raw_hospital_beds dataset I reformatted the facility_id to be 6 digits in length using the LPAD, and CAST functions. I standardized the data and renamed facility_id to provider_ccn. I also reformatted the start_date and end_date to a date format using the TO_DATE function renaming each, start_date_converted and end_date_converted respectively.
 ```
 SELECT
