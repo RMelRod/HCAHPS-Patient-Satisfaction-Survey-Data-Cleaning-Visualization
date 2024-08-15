@@ -259,7 +259,7 @@ To ensure each facility name and provider CCN were correctly identified, I conca
 [Facility Name] + ' - ' + STR([Provider Ccn])
 ```
 ### 10.2 Determining Hospital Size
-Each hospital was to be grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds calculated below. 
+Each hospital was grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds calculated below. 
 ```
 IF [Number Of Beds] >= 500 THEN 'Large'
 ELSEIF [Number Of Beds] >= 100
@@ -267,7 +267,7 @@ AND [Number Of Beds] < 500 THEN 'Medium'
 ELSEIF [Number Of Beds] < 100 THEN 'Small'
 END
 ```
-### 10.3 Identifying Top Box Answers
+### 10.3 Determining Percentage of Patients with Top Box Answers
 A top box question contains the number "9" or "always". Therefore, the following if-then statement was used to identify the number of top box questions. These questions also corresponded with the number of top box answers selected by patients across all of the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
@@ -281,7 +281,8 @@ To compare each hospital's top box mean scores for each HCAHPS question with oth
 [Actual HCAHPS Percent] -
 {FIXED[State],[Hospital Size],[Hcahps Answer Description]:AVG([Actual HCAHPS Percent])}
 ```
-
+### 10.5 Visualizing Overall Hospital Scores Compared to the Mean Cohort
+To visualize each hospital's scores per question with respect to the mean cohort, I created
 
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
 # **Acknowledgment**
