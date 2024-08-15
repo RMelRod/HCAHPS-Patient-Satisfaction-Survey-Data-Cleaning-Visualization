@@ -259,7 +259,7 @@ To ensure each facility name and provider CCN were correctly identified, I conca
 [Facility Name] + ' - ' + STR([Provider Ccn])
 ```
 ### 10.2 Determining Hospital Size
-Each hospital was grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds calculated below. 
+Each hospital was grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds calculated below. A drop down menu to filter amongst small medium and large hospitals as well as state was added.
 ```
 IF [Number Of Beds] >= 500 THEN 'Large'
 ELSEIF [Number Of Beds] >= 100
@@ -267,23 +267,23 @@ AND [Number Of Beds] < 500 THEN 'Medium'
 ELSEIF [Number Of Beds] < 100 THEN 'Small'
 END
 ```
-### 10.3 Determining Percentage of Patients with Top Box Answers
-A top box question contains the number "9" or "always". Therefore, the following if-then statement was used to identify the number of top box questions. These questions also corresponded with the number of top box answers selected by patients across all of the HCAHPS questions.
+### 10.3 Determining Percentage of Patients with Top Box Answers Per Cohort
+A top box question contains the key characters of "9-10" or "Always". Therefore, the following if-then statement was used to identify the number of top box questions. These questions also corresponded with the number of top box answers selected by patients across all of the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
 END
 ```
 ### 10.4 Determining Top Box Mean Percentage & Delta From Mean Cohort
-I then determined the mean percentage score for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state (the mean cohort).
-To compare each hospital's top box mean scores for each HCAHPS question with other hospitals of the same size and in the same state, I then determined the "Delta From the Mean Cohort". 
+The mean percentage score for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state (the mean cohort) was determined.
+To compare each hospital's top box mean scores for each HCAHPS question with other hospitals of the same size and in the same state, I then determined the "Delta From the Mean Cohort" with the calculation below. 
 ```
 [Actual HCAHPS Percent] -
 {FIXED[State],[Hospital Size],[Hcahps Answer Description]:AVG([Actual HCAHPS Percent])}
 ```
 ### 10.5 Visualizing Overall Hospital Scores Compared to the Mean Cohort
 To visualize each hospital's scores per HCAHPS question with respect to the mean cohort, I created the "Cohort Hospital Delta Spread". One can see how the quality of patient care for each hospital compares to the cohert with respect to specific HCAHPS questions.
-
+The "Cohort Hospital Delta Spread" was
 
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
 # **Acknowledgment**
