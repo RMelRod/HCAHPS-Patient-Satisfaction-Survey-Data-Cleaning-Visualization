@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS "postgres"."raw_hospital_data".raw_HCAHPS_data
 
 I examined the raw_hospital_beds table. It seemed rather standardized and strightforward for the most part. I only needed the CMS Certification number (CCN), hospital name and bed count corresponding with the most recent dates. There were some NULL bed counts. However, these will be filtered out in Tableau as these hospitals cannot be classified as small medium or large. Reformatting and manipulation of the date column will also be necessary. A provider CCN number must be in a six digit format, so this must be corrected as well. 
 
-## **6. Data Cleaning of Table 1: raw_hospital_beds**
+## **6. Data Cleaning & Transformation of Table 1: raw_hospital_beds**
 
 ### **6.1 Checking for Duplicates**
 No duplicates were found using the following query.
@@ -76,18 +76,8 @@ HAVING
     COUNT(*) > 1;
 -- 0 rows
 ```
-### **6.2 Reformatting Dates**
+### **6.2 Reformatting Dates & Provider CCN**
 All dates were formatted in a "character varying" format. In order to categorize hospitals as small, medium and large I must extract the most recent bed count available in 2021-2022. Therefore, I reformatted the fiscal_year_end_date, and fiscal_year_end_date column to identify the most recent date that corresponded with the most recent bed count using the TO_DATE function.
-```
-SELECT
-     provider_ccn,
-	hospital_name,
-	TO_DATE(fiscal_year_begin_date,'MM/DD/YYYY') AS fiscal_year_begin_date,
-	TO_DATE(fiscal_year_end_date,'MM/DD/YYYY') AS fiscal_year_end_date,
-	number_of_beds
-FROM raw_hospital_data.raw_hospital_beds;
-```
-### **6.3 Reformatting Provider CCN**
 All provider ccns were formatted in an integer format consisting of varying digit length. To accurately identify a hospital, it's provider cnn number must be six digits in length. I corrected this using the CAST and LPAD function. 
 ```
 SELECT
@@ -98,7 +88,7 @@ SELECT
 	number_of_beds
 FROM raw_hospital_data.raw_hospital_beds;
 ```
-### **6.4 Extracting Relevant Data**
+### **6.3 Extracting Relevant Data**
 To extract the most recent bed count, I used a combination of a common table expression (CTE), WINDOW function and PARTITION BY statement. In the CTE I kept all of the previous reformatting and assigned a ROW_NUMBER to the WINDOW function. In the WINDOW function, I partitioned the data by provider_cnn and ordered the hospitals by fiscal_year_end_date in descending order. By assigning a ROW_NUMBER to this window function I was able to identify those hospitals with the most recent data as their nth_row output was the number 1. I then filtered the data where the nth_row is equal to one.
 ```
 WITH hospital_beds_prep AS
@@ -126,7 +116,7 @@ GROUP BY provider_ccn, hospital_name, fiscal_year_begin_date, fiscal_year_end_da
 ## **7. Initial Data Exploration Table II: raw_hcahps_data**
 I examined the raw_hcahps_data table. As this table was similar to the raw_hospital_beds table, it was apparent I would need to reformat the facility_id. I would also need to standardize this column and rename it provider_ccn. Reformatting of the date column would also be necessary. There were some NULL values. However, these will be filtered out in the final query.
 
-## **8. Data Cleaning Table II: raw_hcahps_data**
+## **8. Data Cleaning & Transformation of Table II: raw_hcahps_data**
 ### **8.1 Checking for Duplicates**
 As I am only interested in the facility_id, facility_name, hcahps_question, hcahps_answer_description, hcahps_answer_percent, num_completed_surveys, survey_response_rate_percent, start_date, and end_date. I decided to check for duplicates on these columns. 
 ```
@@ -221,7 +211,7 @@ ON LPAD(CAST(facility_id AS text),6,'0')= beds.provider_ccn
 AND beds.nth_row = 1
 WHERE number_of_beds IS NOT NULL
 ```
-### **9.2 Assembling the Final Table & Exporting**
+### **9.2 Creation of the Final Table & Exporting**
 Using the query below, I created a table called final_tableau_file. I then exported it to a CSV to be used in the tableau visualization.
 ```
 CREATE TABLE "postgres".raw_hospital_data.final_tableau_file2 AS
@@ -252,14 +242,14 @@ WHERE hcahps_answer_percent IS NOT NULL
 AND num_completed_surveys IS NOT NULL
 AND survey_response_rate_percent IS NOT NULL
 ```
-## **10. Visualization in Tableau**
+## **10. Visualization Dashboard in Tableau**
 ### 10.1 Ensuring Correspondence Between Hospital Name & Provider CCN
 To ensure each facility name and provider CCN were correctly identified, I concatenated the facility name with its corresponding provider CCN.
 ```
 [Facility Name] + ' - ' + STR([Provider Ccn])
 ```
 ### 10.2 Determining Hospital Size
-Each hospital was grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds calculated below. A drop down menu to filter amongst small medium and large hospitals as well as state was added.
+Each hospital was grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds calculated below. A drop down menu was added to filter amongst small, medium and large hospitals in each respective state.
 ```
 IF [Number Of Beds] >= 500 THEN 'Large'
 ELSEIF [Number Of Beds] >= 100
@@ -283,7 +273,7 @@ To compare each hospital's top box mean scores for each HCAHPS question with oth
 ```
 ### 10.5 Visualizing Overall Hospital Scores Compared to the Mean Cohort
 To visualize each hospital's scores per HCAHPS question with respect to the mean cohort, I created the "Cohort Hospital Delta Spread". One can see how the quality of patient care for each hospital compares to the cohert with respect to specific HCAHPS questions.
-The "Cohort Hospital Delta Spread" was
+
 
 Visualization of this project can be found at [Hospital Satisfaction Survey](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HospitalSatisfactionSurvey_17212669360680/HCAHPSDashboard?fbclid=IwZXh0bgNhZW0CMTAAAR3q8wJrMalJI6E2BVM9C7GZrLHuitAxOYLcaJxohYk1OKMNwsCUNpAx_TU_aem_W6MPViatNW3U-0UgnUMcqQ)
 # **Acknowledgment**
