@@ -274,6 +274,6 @@ To compare each hospital's top box mean scores for each HCAHPS question with oth
 ### 10.5 Visualizing Overall Hospital Scores Compared to the Mean Cohort
 To visualize each hospital's scores per HCAHPS question with respect to the mean cohort, I created the "Cohort Hospital Delta Spread". This compared the quality of patient care for each selected hospital with respect to specific HCAHPS questions compared to the mean cohort.
 
-Visualization of this project can be found at [HCAHPS Patient Survey Analysis] (https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+Visualization of this project can be found at [HCAHPS Patient Survey Analysis](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 # **Acknowledgment**
 This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry). Special thanks to [Data Wizardry](https://www.youtube.com/@DataWizardry) for their valuable tutorials and resources.
