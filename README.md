@@ -243,12 +243,7 @@ AND num_completed_surveys IS NOT NULL
 AND survey_response_rate_percent IS NOT NULL
 ```
 ## **10. Visualization of HCAHPS Data in Tableau Dashboard**
-### 10.1 Ensuring Correspondence Between Hospital Name & Provider CCN
-To ensure each facility name and provider CCN were correctly identified, I concatenated the facility name with its corresponding provider CCN.
-```
-[Facility Name] + ' - ' + STR([Provider Ccn])
-```
-### 10.2 Determining Hospital Size
+### 10.1 Determining Hospital Size
 Each hospital was grouped into a cohort consisting of each hospital's size (small, medium, and large) and the state in which it was located. Hospital size was determined based on the number of beds calculated below. A drop down menu was added to filter amongst small, medium and large hospitals in each respective state.
 ```
 IF [Number Of Beds] >= 500 THEN 'Large'
@@ -257,21 +252,21 @@ AND [Number Of Beds] < 500 THEN 'Medium'
 ELSEIF [Number Of Beds] < 100 THEN 'Small'
 END
 ```
-### 10.3 Determining Percentage of Patients with Top Box Answers Per Cohort
+### 10.2 Determining Percentage of Patients with Top Box Answers Per Cohort
 A top box question contains the key characters of "9-10" or "Always". Therefore, the following if-then statement was used to identify the number of top box questions. These questions corresponded with the number of top box answers selected by patients across all of the HCAHPS questions.
 ```
 IF CONTAINS([Hcahps Question],'Always') OR CONTAINS([Hcahps Question],'9')
 THEN 1 ELSE 0
 END
 ```
-### 10.4 Determining Top Box Mean Percentage & Delta From Mean Cohort
+### 10.3 Determining Top Box Mean Percentage & Delta From Mean Cohort
 The mean percentage score for each top box HCAHPS question for each hospital with respect to their size (small, medium, large) and state (the mean cohort) was determined.
 To compare each hospital's top box mean scores for each HCAHPS question with other hospitals of the same size and in the same state, I then determined the "Delta From the Mean Cohort" with the calculation below. 
 ```
 [Actual HCAHPS Percent] -
 {FIXED[State],[Hospital Size],[Hcahps Answer Description]:AVG([Actual HCAHPS Percent])}
 ```
-### 10.5 Visualizing Overall Hospital Scores Compared to the Mean Cohort
+### 10.4 Visualizing Overall Hospital Scores Compared to the Mean Cohort
 To visualize each hospital's scores per HCAHPS question with respect to the mean cohort, I created the "Cohort Hospital Delta Spread". This compared the quality of patient care for each selected hospital with respect to specific HCAHPS questions compared to the mean cohort.
 
 Visualization of this project can be found at [HCAHPS Patient Survey Analysis](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
