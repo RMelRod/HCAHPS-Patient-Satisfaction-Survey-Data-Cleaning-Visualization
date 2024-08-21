@@ -1,10 +1,12 @@
 # HCAHPS Patient Satisfaction Survey Data Cleaning & Visualization
 ## **1. Project Overview**
-**Objective:**  To clean, categorize and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores. By focusing on top box answers, (survey scores = "Always"/"9-10") for each HCAHPS question, to identify the quality of patient care in 3,000+ hospitals nationwide.
+**Objective:**  To clean, categorize and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores. By focusing on top box answers, (survey scores = "Always"/"9-10") for each HCAHPS question, to identify the quality of patient care in 3,000+ hospitals nationwide. 
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, de-duplication of records, data standardization, and ensuring data integrity for visualization in Tableau.
 
 **Tools:** Excel, SQL (PostgreSQL), Tableau
+
+**Visualization:** [HCAHPS Patient Survey Analysis](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 
 ## 2. Data Acquisition
 
