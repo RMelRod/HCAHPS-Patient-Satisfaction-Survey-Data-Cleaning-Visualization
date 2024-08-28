@@ -7,7 +7,7 @@ To measure patients' perceptions of their hospital experiences, The Hospital Con
 
 Every year, CMS sets aside 2% of the total reimbursement that they pay each hospital for Medicare & Medicaid inpatients. If the hospital performs poorly according to measures established by the HVBPP (determined in part by the percentage of "top box" answers provided by the HCAHPS survey), they will not earn back the 2% set aside. However, the best hospitals will earn back the 2% plus a bonus.
 
-**Objective:** Identify which hospitals among 4000 across the US in 2022 recieved top scores based on the percentage of "top box" answer scores (patient satisfation survey scores = "Always"/"9-10"). 
+**Objective:** Identify which hospitals among 4000 across the US in 2022 recieved top scores based on the percentage of "top box" answer scores (patient satisfation survey scores = "Always";"9-10"). 
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, de-duplication of records, data standardization, and ensuring data integrity for visualization in Tableau.
 
