@@ -7,8 +7,8 @@ To measure patients' perceptions of their hospital experiences, The Hospital Con
 
 Every year, CMS sets aside 2% of the total reimbursement that they pay each hospital for Medicare & Medicaid inpatients. If the hospital performs poorly according to measures established by the HVBPP (determined in part by the percentage of "top box" answers provided by the HCAHPS survey), they will not earn back the 2% set aside. However, the best hospitals will earn back the 2% plus a bonus.
 
-**Objective:** Focusing on top box answer scores (patient satisfation survey scores = "Always"/"9-10"), based on hospital size and location, identify which hospitals were most likely to recieve reimbursement based on the quality of care provided. 
- * To clean, categorize and visualize HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) survey scores. By focusing on top box answers,  for each HCAHPS question, to identify the quality of patient care in 3,000+ hospitals nationwide. 
+**Objective:** Focusing on top box answer scores (patient satisfation survey scores = "Always"/"9-10"), identify which hospitals among 3000 in the US were most likely to recieve reimbursement under the VBP based on the quality of care provided. 
+ * Utilizing Excel, PostgreSQL and Tableau, HCAHPS survey data will be cleaned, categoried and visualized.
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, de-duplication of records, data standardization, and ensuring data integrity for visualization in Tableau.
 
@@ -20,7 +20,7 @@ Every year, CMS sets aside 2% of the total reimbursement that they pay each hosp
 
 **Sources**: [hospitals_11_2023.zip_HCAHPS Hospital](https://data.cms.gov/provider-data/archived-data/hospitals), [Hospital Provider Cost Report](https://data.cms.gov/provider-compliance/cost-report/hospital-provider-cost-report/dataquery=%7B%22filters%22%3A%7B%22rootConjunction%22%3A%7B%22label%22%3A%22And%22%2C%22value%22%3A%22AND%22%7D%2C%22list%22%3A%5B%5D%7D%2C%22keywords%22%3A%22%22%2C%22offset%22%3A0%2C%22limit%22%3A10%2C%22sort%22%3A%7B%22sortBy%22%3A%22Fiscal%20Year%20End%20Date%22%2C%22sortOrder%22%3A%22DESC%22%7D%2C%22columns%22%3A%5B%5D%7D)
 
-**Format**: Datasets were downloaded in .csv format and reformatted in Microsoft Excel.
+**Format**: Datasets were downloaded in .CSV format and reformatted in Microsoft Excel.
 
 ## **3. Loading & Inspection of CSV Data**
 
