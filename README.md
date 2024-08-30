@@ -280,4 +280,4 @@ To visualize each hospital's scores per HCAHPS question with respect to the mean
 
 Visualization of this project can be found at [HCAHPS Patient Survey Analysis](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 # **Acknowledgment**
-This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry). Special thanks to [Data Wizardry](https://www.youtube.com/@DataWizardry) for their valuable tutorials and resources.
+This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry) a special thanks to them for their valuable tutorials and resources.
