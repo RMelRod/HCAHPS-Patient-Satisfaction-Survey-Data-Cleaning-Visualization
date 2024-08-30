@@ -31,11 +31,11 @@ Using the following query I created tables in PostgreSQL. I also imported the re
 ```
 CREATE TABLE IF NOT EXISTS "postgres"."raw_hospital_data".raw_hospital_beds
 (
-     provider_ccn integer
-    ,hospital_name character varying(255)
-    ,fiscal_year_begin_date character varying(10)
-    ,fiscal_year_end_date character varying(10)
-    ,number_of_beds integer
+    provider_ccn integer,
+    hospital_name character varying(255),
+    fiscal_year_begin_date character varying(10),
+    fiscal_year_end_date character varying(10),
+    number_of_beds integer
 );
 CREATE TABLE IF NOT EXISTS "postgres"."raw_hospital_data".raw_HCAHPS_data
 (
