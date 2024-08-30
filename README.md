@@ -7,7 +7,7 @@ To measure patients' perceptions of their hospital experiences, The Hospital Con
 
 Every year, CMS sets aside 2% of the total reimbursement they pay each hospital for Medicare & Medicaid inpatients. If the hospital performs well (partially determined by the percentage of "top box" answers from the HCAHPS survey), they will receive a portion of the 2%. The best hospitals will receive the entire 2%  with a bonus.
 
-**Objective:** The purpose of this project is to identify which hospitals (among 3000) received top patient satisfaction survey scores across the US and would have been eligible for payment increases in 2022.
+**Objective:** The purpose of this project was to identify hospitals eligible for payment increases (among 3000) that received top patient satisfaction survey scores by size and region across the US in 2022.
 
 **Tools/Methods:** Utilizing Excel, PostgreSQL and Tableau, HCAHPS survey data will be cleaned, categorized and visualized.
 
