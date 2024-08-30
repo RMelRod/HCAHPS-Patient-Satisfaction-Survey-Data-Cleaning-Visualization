@@ -1,11 +1,11 @@
 # HCAHPS Patient Satisfaction Survey Data Cleaning & Visualization
 ## **1. Project Overview**
 
-**Background:** [The Hospital Value-Based Purchasing (VBP) Program](https://www.cms.gov/medicare/quality/initiatives/hospital-quality-initiative/hospital-value-based-purchasing) is one of several value-based care programs introduced by the Affordable Care Act of 2010. Value-based care links provider reimbursement to the quality of care they provide. Under the programs, hospitals receive payment adjustments from The Centers for Medicare and Medicaid Services (CMS) based on the quality of care the hospitals deliver to patients during inpatient stays.
+**Background:** [The Hospital Value-Based Purchasing (VBP) Program](https://www.cms.gov/medicare/quality/initiatives/hospital-quality-initiative/hospital-value-based-purchasing) is one of several value-based care programs introduced in 2010. Under the programs, hospitals receive payment adjustments from The Centers for Medicare and Medicaid Services (CMS) based on the quality of care the hospitals' deliver.
 
-To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey or HCAHPS survey was developed and is used across the United States. Each hospital collects these surveys and submits the percentage of patients that answered "top box" questions (survey scores = "Always"/"9-10") to the Centers for Medicare and Medicaid Services (CMS) so they may assess that hospital's performance.
+To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey or HCAHPS survey was developed. Each hospital collects these surveys and submits the percentage of patients that answered "top box" questions (survey scores = "Always"/"9-10") to the Centers for Medicare and Medicaid Services (CMS) so they may assess that hospital's performance.
 
-Every year, CMS sets aside 2% of the total reimbursement that they pay each hospital for Medicare & Medicaid inpatients. If the hospital performs well according to measures established by the HVBPP (determined in part by the percentage of "top box" answers provided by the HCAHPS survey), they will earn back a portion of the 2% set aside. However, the best hospitals will earn back the 2% plus a bonus.
+Every year, CMS sets aside 2% of the total reimbursement that they pay each hospital for Medicare & Medicaid inpatients. If the hospital performs well according to measures established by the HVBPP (determined in part by the percentage of "top box" answers provided by the HCAHPS survey), they will earn back a portion. The best hospitals will be completely reimbursed including a bonus.
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, de-duplication of records, data standardization, and ensuring data integrity for visualization in Tableau.
 
