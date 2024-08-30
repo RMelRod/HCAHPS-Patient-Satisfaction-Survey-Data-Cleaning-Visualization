@@ -6,7 +6,8 @@
 To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey or HCAHPS survey was developed. Each hospital collects these surveys and submits the percentage of patients that answered "top box" questions (survey scores = "9-10"/"always") to the Centers for Medicare and Medicaid Services (CMS) for assessment performance.
 
 Every year, CMS sets aside 2% of the total reimbursement they pay each hospital for Medicare & Medicaid inpatients. If the hospital performs well (partially determined by the percentage of "top box" answers from the HCAHPS survey), they will receive a portion of the 2%. The best hospitals will receive the entire 2%  with a bonus.
-**Objective:** The purpose of this project is to identify which hospitals received top patient satisfaction survey scores ("9-10"/"always") among 3000 across the US in 2022.
+
+**Objective:** The purpose of this project is to identify which hospitals (among 3000) received top patient satisfaction survey scores ("9-10"/"always") across the US in 2022.
 
 **Tools/Methods:** Utilizing Excel, PostgreSQL and Tableau, HCAHPS survey data will be cleaned, categorized and visualized.
 
