@@ -13,7 +13,7 @@ Each hospital's performance is partially determined by the percentage of "top bo
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, de-duplication of records, data standardization, and ensuring data integrity for visualization in Tableau.
 
-**Visualization:** [HCAHPS Patient Survey Analysis](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+**Visualization:** [HCAHPS Patient Survey Visualization](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 
 ## 2. Data Acquisition
 
