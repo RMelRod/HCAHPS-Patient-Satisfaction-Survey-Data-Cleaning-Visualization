@@ -3,7 +3,7 @@
 
 **Background:** [The Hospital Value-Based Purchasing (VBP) Program](https://www.cms.gov/medicare/quality/initiatives/hospital-quality-initiative/hospital-value-based-purchasing) is one of several value-based care programs introduced in 2010 to incetivize the quality of patient care. Under these programs, hospitals receive payment adjustments from The Centers for Medicare and Medicaid Services (CMS) based on the quality of care hospitals deliver.
 
-To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey or HCAHPS survey was developed. Hospitals collect these surveys and submit patient responses to the Centers for Medicare and Medicaid Services (CMS) for assessment.
+To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey or HCAHPS survey was developed. Hospitals collect and submit patient responses to the Centers for Medicare and Medicaid Services (CMS) for assessment.
 
 Each hospital's performance is partially determined by the percentage of "top box" answers (survey scores = "9-10"/"always") from the HCAHPS survey. Hospitals that perform well will receive a payment increase based on their total reimbursement for that year. The best hospitals will receive up to 2% with a bonus. Therefore, it is within the best interests of hospitals to strive for the highest HCAHPS scores possible.
 
