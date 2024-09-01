@@ -7,7 +7,7 @@ To measure patients' perceptions of their hospital experiences, The Hospital Con
 
 Each hospital's performance is partially determined by the percentage of "top box" answers (survey scores = "9-10"/"always") from the HCAHPS survey. The best performing hospitals will receive a payment increase based on their total reimbursement for that year with a bonus. Therefore, it is within the best interests of hospitals to strive for the highest HCAHPS scores possible.
 
-**Objective:** The aim of this project was to identify the top-rated hospitals in the US (according to 2022 HCAHPS survey data) categorized by size and region, and to highlight areas for improvement in lower-rated hospitals.
+**Objective:** The aim of this project was to identify the top-rated hospitals in the US (utilizing 2022 HCAHPS survey data) categorized by size and region, and to highlight areas for improvement in lower-rated hospitals.
 
 **Tools/Methods:** Utilizing Excel, PostgreSQL and Tableau, HCAHPS survey data will be cleaned, categorized and visualized.
 
