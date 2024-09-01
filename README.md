@@ -1,7 +1,7 @@
 # HCAHPS Patient Satisfaction Survey Data Cleaning & Visualization
 ## **1. Project Overview**
 
-**Background:** [The Hospital Value-Based Purchasing (VBP) Program](https://www.cms.gov/medicare/quality/initiatives/hospital-quality-initiative/hospital-value-based-purchasing) is one of several value-based care programs introduced in 2010 to incetivize the quality of patient care. Under these programs, hospitals receive payment adjustments from The Centers for Medicare and Medicaid Services (CMS) based on the quality of care the hospitals' deliver.
+**Background:** [The Hospital Value-Based Purchasing (VBP) Program](https://www.cms.gov/medicare/quality/initiatives/hospital-quality-initiative/hospital-value-based-purchasing) is one of several value-based care programs introduced in 2010 to incetivize the quality of patient care. Under these programs, hospitals receive payment adjustments from The Centers for Medicare and Medicaid Services (CMS) based on the quality of care hospitals deliver.
 
 To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey or HCAHPS survey was developed. Hospitals collect these surveys and submit patient responses to the Centers for Medicare and Medicaid Services (CMS) for assessment.
 
