@@ -3,9 +3,9 @@
 
 **Background:** [The Hospital Value-Based Purchasing (VBP) Program](https://www.cms.gov/medicare/quality/initiatives/hospital-quality-initiative/hospital-value-based-purchasing) is one of several value-based care programs introduced in 2010 to incetivize the quality of patient care. Under these programs, hospitals receive payment adjustments from The Centers for Medicare and Medicaid Services (CMS) based on the quality of care hospitals deliver.
 
-To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey or HCAHPS survey was developed. Hospitals submit patient responses to the Centers for Medicare and Medicaid Services (CMS) for assessment.
+To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey (HCAHPS survey) was developed. Hospitals submit patient responses to the Centers for Medicare and Medicaid Services (CMS) for assessment.
 
-Each hospital's performance is partially determined by the percentage of "top box" answers (survey scores = "9-10"/"always") from the HCAHPS survey. The best performing hospitals will receive a payment increase based on their total reimbursement for that year with a bonus. Therefore, it is within the best interests of hospitals to strive for the highest HCAHPS scores possible.
+Each hospital's performance is partially determined by the percentage of "top box" answers (survey scores = "9-10"/"always") from the HCAHPS survey. The best performing hospitals will receive a payment increase based on their total reimbursement for that year plus a bonus. Therefore, it is within the best interest of hospitals to strive for the highest HCAHPS scores possible.
 
 **Objective:** The aim of this project was to identify the top-rated hospitals in the US (utilizing 2022 HCAHPS survey data) categorized by size and region, and to highlight areas for improvement in lower-rated hospitals.
 
@@ -278,6 +278,6 @@ To compare each hospital's top box mean scores for each HCAHPS question with oth
 ### 10.4 Visualizing Overall Hospital Scores Compared to the Mean Cohort
 To visualize each hospital's scores per HCAHPS question with respect to the mean cohort, I created the "Cohort Hospital Delta Spread". This compared the quality of patient care for each selected hospital with respect to specific HCAHPS questions compared to the mean cohort.
 
-Visualization of this project can be found at [HCAHPS Patient Survey Analysis](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+Visualization of this project can be found at [HCAHPS Patient Survey Visualization](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 # **Acknowledgment**
 This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry) a special thanks to them for their valuable tutorials and resources.
