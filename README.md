@@ -1,11 +1,7 @@
 # HCAHPS Patient Satisfaction Survey Data Cleaning & Visualization
 ## **1. Project Overview**
 
-**Background:** [The Hospital Value-Based Purchasing (VBP) Program](https://www.cms.gov/medicare/quality/initiatives/hospital-quality-initiative/hospital-value-based-purchasing) is one of several value-based care programs introduced in 2010 to incentivize the quality of patient care. Under these programs, hospitals receive payment adjustments from The Centers for Medicare and Medicaid Services (CMS) based on the quality of care hospitals deliver.
-
-To measure patients' perceptions of their hospital experiences, The Hospital Consumer Assessment of Healthcare Providers and Systems survey (HCAHPS survey) was developed. Hospitals submit patient responses to the Centers for Medicare and Medicaid Services (CMS) for assessment.
-
-Each hospital's performance is partially determined by the percentage of "top box" answers (survey scores = "9-10"/"always") from the HCAHPS survey. The best performing hospitals will receive a payment increase based on their total reimbursement for that year plus a bonus. Therefore, it is within the best interest of hospitals to strive for the highest HCAHPS scores possible.
+**Background:** [The Hospital Value-Based Purchasing (VBP) Program](https://www.cms.gov/medicare/quality/initiatives/hospital-quality-initiative/hospital-value-based-purchasing) is one of several value-based care programs introduced in 2010 to incentivize the quality of patient care. Under these programs, hospitals receive payment adjustments from The Centers for Medicare and Medicaid Services (CMS) based on the quality of care hospitals deliver. The Hospital Consumer Assessment of Healthcare Providers and Systems survey (HCAHPS survey) is used to measure patients' perceptions of their hospital experiences. Hospitals submit patient responses to the Centers for Medicare and Medicaid Services (CMS) for assessment. Each hospital's performance partially depends on the percentage of "top box" answers (patient survey scores = "9-10"/"always") from the HCAHPS survey. The best performing hospitals will receive a payment increase plus a bonus. Therefore, it is within the best interest of hospitals to strive for the highest HCAHPS survey scores possible.
 
 **Objective:** The aim of this project was to identify the top-rated hospitals in the US (utilizing 2022 HCAHPS survey data) categorized by size and region, and to highlight areas for improvement in lower-rated hospitals.
 
