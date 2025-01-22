@@ -8,7 +8,7 @@
 
 **Scope:** This project involved importing raw HCAHPS survey data, raw provider cost report data, handling NULL values, de-duplication of records, data standardization, and ensuring data integrity for visualization in Tableau.
 
-**Visualization:** [HCAHPS Patient Survey Visualization](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+**Visualization:** [HCAHPS Patient Survey Visualization](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HCAHPSPatientSatisfactionSurveyDataCleaningVisualization/HCAHPSDashboard).
 
 ## 2. Data Acquisition
 
@@ -273,6 +273,6 @@ To compare each hospital's top box mean scores for each HCAHPS question with oth
 ### 10.4 Visualizing Overall Hospital Scores Compared to the Mean Cohort
 To visualize each hospital's scores per HCAHPS question with respect to the mean cohort, I created the "Cohort Hospital Delta Spread". This compared the quality of patient care for each selected hospital with respect to specific HCAHPS questions compared to the mean cohort.
 
-Visualization of this project can be found at [HCAHPS Patient Survey Visualization](https://public.tableau.com/views/HCAHPSPatientSurveyAnalysis_17232589398030/HCAHPSDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+Visualization of this project can be found at [HCAHPS Patient Survey Visualization](https://public.tableau.com/app/profile/rebecca.rodriguez2506/viz/HCAHPSPatientSatisfactionSurveyDataCleaningVisualization/HCAHPSDashboard).
 # **Acknowledgment**
 This project was created with the assistance of [Data Wizardry](https://www.youtube.com/@DataWizardry) a special thanks to them for their valuable tutorials and resources.
